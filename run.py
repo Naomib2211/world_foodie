@@ -15,6 +15,8 @@ food_questions = (
     "Which country is known for its traditional dish of 'Borscht'?: "
 )
 
+food_question_number = 0
+
 mult_choices = (
     ("1. Japan”, “2. Vietnam”, “3. Thailand”, “4. China"),
     ("1. Rice”, “2. Potatoes”, “3. Noodles”, “4. Tofu"),
@@ -27,3 +29,6 @@ mult_choices = (
     ("1. Pad Thai”, “2. Feijoada”, “3. Kimchi”, “4. Gyros"),
     ("1. Russia”, “2. France”, “3. Italy”, “4. Spain"),  
 )
+
+correct_mult_choice = ("2", "2", "3", "1", "1", "4", "1", "1", "2", "1")
+print(mult_choices)
