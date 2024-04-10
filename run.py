@@ -15,7 +15,7 @@ food_questions = (
     "Which country is known for its traditional dish of 'Borscht'?: "
 )
 
-food_question_number = 0
+food_questions_number = 0
 
 mult_choices = (
     ("1. Japan”, “2. Vietnam”, “3. Thailand”, “4. China"),
@@ -30,6 +30,14 @@ mult_choices = (
     ("1. Russia”, “2. France”, “3. Italy”, “4. Spain"),  
 )
 
-print(mult_choices)
+correct_mult_choice = ("2", "2", "3", "1", "1", "4", "1", "1", "2", "1")
 
-#correct_mult_choice = ("2", "2", "3", "1", "1", "4", "1", "1", "2", "1")
+# Function to start quiz
+
+def conduct_quiz(food_questions, mult_choices, correct_mult_choice):
+    score = 0
+    total_food_questions = len(food_questions_number)
+    users_answers = []
+
+print("Welcome to the World Foodie Quiz! ")
+print("It's simple! \nAnswer the question by typing in the letter that corresponds \nto the 'right' answer.")
