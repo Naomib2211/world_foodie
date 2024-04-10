@@ -30,5 +30,6 @@ mult_choices = (
     ("1. Russia”, “2. France”, “3. Italy”, “4. Spain"),  
 )
 
-correct_mult_choice = ("2", "2", "3", "1", "1", "4", "1", "1", "2", "1")
 print(mult_choices)
+
+#correct_mult_choice = ("2", "2", "3", "1", "1", "4", "1", "1", "2", "1")
