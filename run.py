@@ -65,7 +65,7 @@ def conduct_quiz(food_questions, mult_choices, correct_answer):
 
     # Display user answer
 
-    #for i, user_answer in enumerate(users_answers):
+    for i, user_answer in enumerate(users_answers):
         print(f"{mult_choices[i][int(user_answer)]}")
 
     # Calculate user score
@@ -73,6 +73,16 @@ def conduct_quiz(food_questions, mult_choices, correct_answer):
     for user_answer, correct_answer in zip(users_answers, correct_answer):
         if user_answer == correct_answer:
             score += 1
+    print(f"\nTotal Points: {score}")
+    
+    # Display message to user based on score
+
+    if score <= 3:
+        print("Well... \nThe good part is that you get to explore \nwhat the world has to offer!")
+    elif 4 <= score <= 6:
+        print("Pretty average! Nothing else to say, really.")
+    else:
+        print("Congratulations! This is general knowledge, \nbut good for you!")
 
 conduct_quiz(food_questions, mult_choices, correct_answer)
 
