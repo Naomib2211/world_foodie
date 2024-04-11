@@ -83,5 +83,8 @@ def conduct_quiz(food_questions, mult_choices, correct_answer):
             break
         else:
             print("Invalid answer, please type 'yes' or 'no'")
+        
+        if restart.lower() != "yes":
+            break
 
 conduct_quiz(food_questions, mult_choices, correct_answer)
