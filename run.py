@@ -63,11 +63,6 @@ def conduct_quiz(food_questions, mult_choices, correct_answer):
 
     print("\nQuiz completed!\nHere is your result: ")
 
-    # Display user answer
-
-    for i, user_answer in enumerate(users_answers):
-        print(f"{mult_choices[i][int(user_answer)]}")
-
     # Calculate user score
     
     for user_answer, correct_answer in zip(users_answers, correct_answer):
