@@ -54,7 +54,7 @@ def conduct_quiz(food_questions, mult_choices, correct_answer):
 
             # Validate user input
             while True:
-                user_answer = input(f"\nYour answer: ")
+                user_answer = input(f"\nYour answer:\n ")
                 if user_answer in ["1", "2", "3", "4"]:
                     users_answers.append(user_answer)
                     break
@@ -78,7 +78,7 @@ def conduct_quiz(food_questions, mult_choices, correct_answer):
             print("Congratulations! This is general knowledge, \nbut good for you!")
 
         # Prompt user to restart the quiz
-        restart = input("\nDo you want to restart the quiz? (yes/no): ")
+        restart = input("\nDo you want to restart the quiz? (yes/no):\n ")
         if restart.lower() in ["yes", "no"]:
             break
         else:
