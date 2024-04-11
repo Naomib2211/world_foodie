@@ -35,49 +35,53 @@ correct_answer = ("2", "2", "3", "1", "1", "4", "1", "1", "2", "1")
 # Function to start quiz
 
 def conduct_quiz(food_questions, mult_choices, correct_answer):
-    score = 0
-    total_food_questions = len(food_questions)
-    users_answers = []
+    while True:
+        score = 0
+        total_food_questions = len(food_questions)
+        users_answers = []
 
-    print("Welcome to the World Foodie Quiz!")
-    print("It's simple! \nAnswer the question by typing in the letter that corresponds \nto the 'right' answer.")
+        print("Welcome to the World Foodie Quiz!")
+        print("It's simple! \nAnswer the question by typing in the letter that corresponds \nto the 'right' answer.")
 
-    food_questions_order = list(range(total_food_questions))
-    random.shuffle(food_questions_order)
+        food_questions_order = list(range(total_food_questions))
+        random.shuffle(food_questions_order)
 
+        for i in food_questions_order:
+            print(f"\nQuestion: {food_questions[i]}")
+            print("Choices: ")
+            for choice in mult_choices[i]:
+                print(choice)
 
-    for i in food_questions_order:
-        print(f"\nQuestion: {food_questions[i]}")
-        print("Choices: ")
-        for choice in mult_choices[i]:
-            print(choice)
+            # Validate user input
+            while True:
+                user_answer = input(f"\nYour answer: ")
+                if user_answer in ["1", "2", "3", "4"]:
+                    users_answers.append(user_answer)
+                    break
+                else:
+                    print("Invalid answer! Please choose between numbers 1, 2, 3 or 4")
 
-        # Validate user input
-        while True:
-            user_answer = input(f"\nYour answer: ")
-            if user_answer in ["1", "2", "3", "4"]:
-                users_answers.append(user_answer)
-                break
-            else:
-                print("Invalid answer! Please choose between numbers 1, 2, 3 or 4")
+        print("\nQuiz completed!\nHere is your result: ")
 
-    print("\nQuiz completed!\nHere is your result: ")
+        # Calculate user score
+        for user_answer, correct_answer in zip(users_answers, correct_answer):
+            if user_answer == correct_answer:
+                score += 1
+        print(f"\nTotal Points: {score}")
+        
+        # Display message to user based on score
+        if score <= 3:
+            print("Well... \nThe good part is that you get to explore \nwhat the world has to offer!")
+        elif 4 <= score <= 6:
+            print("Pretty average! Nothing else to say, really.")
+        else:
+            print("Congratulations! This is general knowledge, \nbut good for you!")
 
-    # Calculate user score
-    
-    for user_answer, correct_answer in zip(users_answers, correct_answer):
-        if user_answer == correct_answer:
-            score += 1
-    print(f"\nTotal Points: {score}")
-    
-    # Display message to user based on score
-
-    if score <= 3:
-        print("Well... \nThe good part is that you get to explore \nwhat the world has to offer!")
-    elif 4 <= score <= 6:
-        print("Pretty average! Nothing else to say, really.")
-    else:
-        print("Congratulations! This is general knowledge, \nbut good for you!")
+        # Prompt user to restart the quiz
+        restart = input("\nDo you want to restart the quiz? (yes/no): ")
+        if restart.lower() in ["yes", "no"]:
+            break
+        else:
+            print("Invalid answer, please type 'yes' or 'no'")
 
 conduct_quiz(food_questions, mult_choices, correct_answer)
-
