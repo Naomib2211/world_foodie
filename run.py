@@ -47,10 +47,10 @@ def conduct_quiz(food_questions, mult_choices, correct_mult_choice):
 
 
     for i in food_questions_order:
-        print(f"\nQuestion {i + 1}: {food_questions[i]}")
+        print(f"\nQuestion: {food_questions[i]}")
         print("Choices: ")
         for choice in mult_choices[i]:
-            print(choice, end="")
+            print(choice)
 
         # Validate user input
         while True:
