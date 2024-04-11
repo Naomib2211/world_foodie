@@ -27,7 +27,7 @@ mult_choices = (
     ("1. Poland”, “2. Hungary”, “3. Czech Republic”, “4. Slovakia"),
     ("1. Empanadas”, “2. Sushi”, “3. Pho”, “4. Tacos"),
     ("1. Pad Thai”, “2. Feijoada”, “3. Kimchi”, “4. Gyros"),
-    ("1. Russia”, “2. France”, “3. Italy”, “4. Spain"),  
+    ("1. Russia”, “2. France”, “3. Italy”, “4. Spain")  
 )
 
 correct_mult_choice = ("2", "2", "3", "1", "1", "4", "1", "1", "2", "1")
@@ -36,8 +36,31 @@ correct_mult_choice = ("2", "2", "3", "1", "1", "4", "1", "1", "2", "1")
 
 def conduct_quiz(food_questions, mult_choices, correct_mult_choice):
     score = 0
-    total_food_questions = len(food_questions_number)
+    total_food_questions = len(food_questions)
     users_answers = []
 
-print("Welcome to the World Foodie Quiz! ")
-print("It's simple! \nAnswer the question by typing in the letter that corresponds \nto the 'right' answer.")
+    print("Welcome to the World Foodie Quiz!")
+    print("It's simple! \nAnswer the question by typing in the letter that corresponds \nto the 'right' answer.")
+
+    food_questions_order = list(range(total_food_questions))
+    random.shuffle(food_questions_order)
+
+
+    for i in food_questions_order:
+        print(f"\nQuestion {i + 1}: {food_questions[i]}")
+        print("Choices: ")
+        for choice in mult_choices[i]:
+            print(choice, end="")
+
+        # Validate user input
+        while True:
+            user_answer = input(f"\nYour answer: ")
+            if user_answer in ["1", "2", "3", "4"]:
+                users_answers.append(user_answer)
+                break
+            else:
+                print("Invalid answer! Please choose between numbers 1, 2, 3 or 4")
+
+    print("\nQuiz completed!\nHere are your answers:")
+conduct_quiz(food_questions, mult_choices, correct_mult_choice)
+
