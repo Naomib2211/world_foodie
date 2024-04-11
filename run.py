@@ -30,11 +30,11 @@ mult_choices = (
     ("1. Russia", "2. France", "3. Italy", "4. Spain")  
 )
 
-correct_mult_choice = ("2", "2", "3", "1", "1", "4", "1", "1", "2", "1")
+correct_answer = ("2", "2", "3", "1", "1", "4", "1", "1", "2", "1")
 
 # Function to start quiz
 
-def conduct_quiz(food_questions, mult_choices, correct_mult_choice):
+def conduct_quiz(food_questions, mult_choices, correct_answer):
     score = 0
     total_food_questions = len(food_questions)
     users_answers = []
@@ -61,7 +61,18 @@ def conduct_quiz(food_questions, mult_choices, correct_mult_choice):
             else:
                 print("Invalid answer! Please choose between numbers 1, 2, 3 or 4")
 
-    print("\nQuiz completed!\nHere are your answers:")
+    print("\nQuiz completed!\nHere is your result: ")
 
-conduct_quiz(food_questions, mult_choices, correct_mult_choice)
+    # Display user answer
+
+    #for i, user_answer in enumerate(users_answers):
+        print(f"{mult_choices[i][int(user_answer)]}")
+
+    # Calculate user score
+    
+    for user_answer, correct_answer in zip(users_answers, correct_answer):
+        if user_answer == correct_answer:
+            score += 1
+
+conduct_quiz(food_questions, mult_choices, correct_answer)
 
