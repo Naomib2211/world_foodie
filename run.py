@@ -34,6 +34,7 @@ correct_answer = ("2", "2", "3", "1", "1", "4", "1", "1", "2", "1")
 
 # Function to start quiz
 
+
 def conduct_quiz(food_questions, mult_choices, correct_answer):
     while True:
         score = 0
@@ -41,7 +42,9 @@ def conduct_quiz(food_questions, mult_choices, correct_answer):
         users_answers = []
 
         print("Welcome to the World Foodie Quiz!")
-        print("It's simple! \nAnswer the question by typing in the letter that corresponds \nto the 'right' answer.")
+        print("\nIt's simple!"
+              "\nAnswer the question by typing in the letter"
+              "that corresponds \nto the 'right' answer.")
 
         food_questions_order = list(range(total_food_questions))
         random.shuffle(food_questions_order)
@@ -59,7 +62,8 @@ def conduct_quiz(food_questions, mult_choices, correct_answer):
                     users_answers.append(user_answer)
                     break
                 else:
-                    print("Invalid answer! Please choose between numbers 1, 2, 3 or 4")
+                    print("Invalid answer!"
+                          "Please choose between numbers 1, 2, 3 or 4")
 
         print("\nQuiz completed!\nHere is your result: ")
 
@@ -71,11 +75,13 @@ def conduct_quiz(food_questions, mult_choices, correct_answer):
         
         # Display message to user based on score
         if score <= 3:
-            print("Well... \nThe good part is that you get to explore \nwhat the world has to offer!")
+            print("Well... \nThe good part is that you get to explore"
+                  "\nwhat the world has to offer!")
         elif 4 <= score <= 6:
             print("Pretty average! Nothing else to say, really.")
         else:
-            print("Congratulations! This is general knowledge, \nbut good for you!")
+            print("Congratulations! This is general knowledge,"
+                  "\nbut good for you!")
 
         # Prompt user to restart the quiz
         restart = input("\nDo you want to restart the quiz? (yes/no):\n ")
