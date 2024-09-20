@@ -43,8 +43,8 @@ def conduct_quiz(food_questions, mult_choices, correct_answer):
 
         print("Welcome to the World Foodie Quiz!")
         print("\nIt's simple!"
-              "\nAnswer the question by typing in the letter"
-              "that corresponds \nto the 'right' answer.")
+              "\nAnswer the question by typing \nin the letter"
+              " that corresponds \nto the 'right' answer.")
 
         food_questions_order = list(range(total_food_questions))
         random.shuffle(food_questions_order)
@@ -84,13 +84,16 @@ def conduct_quiz(food_questions, mult_choices, correct_answer):
                   "\nbut good for you!")
 
         # Prompt user to restart the quiz
-        restart = input("\nDo you want to restart the quiz? (yes/no):\n ")
-        if restart.lower() in ["yes", "no"]:
-            break
-        else:
-            print("Invalid answer, please type 'yes' or 'no'")
-        
-        if restart.lower() != "yes":
-            break
+        while True:
+            restart = input("\nDo you want to restart the quiz? (yes/no):\n ").lower()
+            if restart == "yes":
+                print("\nRestarting the quiz...\n")
+                break
+            elif restart == "no":
+                print("\n Thank you for taking this quiz! Bye!") 
+                return     
+            else:
+                print("Invalid answer, please type 'yes' or 'no'.")
+                
 
 conduct_quiz(food_questions, mult_choices, correct_answer)
