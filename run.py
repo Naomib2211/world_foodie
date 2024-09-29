@@ -94,7 +94,7 @@ def conduct_quiz(food_questions, mult_choices, correct_answer):
                 print(Fore.MAGENTA + "\nRestarting the quiz...\n")
                 break
             elif restart == "no":
-                print(Back.GREEN + Style.BRIGHT + "\n Thank you for taking this quiz! Bye!") 
+                print(Back.GREEN + Style.BRIGHT + "\n Thank you for taking this quiz! Bye! " + Back.RESET + Style.RESET_ALL)
                 return     
             else:
                 print(Fore.RED + Style.BRIGHT + "Invalid answer, please type 'yes' or 'no'.")
