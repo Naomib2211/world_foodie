@@ -1,4 +1,8 @@
 import random
+import colorama
+from colorama import Fore, Back, Style
+colorama.init(autoreset=True)
+
 
 # Quiz Questions and Multiple Choices
 
@@ -41,7 +45,7 @@ def conduct_quiz(food_questions, mult_choices, correct_answer):
         total_food_questions = len(food_questions)
         users_answers = []
 
-        print("Welcome to the World Foodie Quiz!")
+        print(Back.GREEN + Style.BRIGHT + "Welcome to the World Foodie Quiz!")
         print("\nIt's simple!"
               "\nAnswer the question by typing \nin the letter"
               " that corresponds \nto the 'right' answer.")
@@ -50,10 +54,10 @@ def conduct_quiz(food_questions, mult_choices, correct_answer):
         random.shuffle(food_questions_order)
 
         for i in food_questions_order:
-            print(f"\nQuestion: {food_questions[i]}")
-            print("Choices: ")
+            print(Fore.BLUE + Style.BRIGHT + f"\nQuestion: {food_questions[i]}")
+            print(Fore.YELLOW + "Choices: ")
             for choice in mult_choices[i]:
-                print(choice)
+                print(Style.BRIGHT + choice)
 
             # Validate user input
             while True:
@@ -62,7 +66,7 @@ def conduct_quiz(food_questions, mult_choices, correct_answer):
                     users_answers.append(user_answer)
                     break
                 else:
-                    print("Invalid answer!"
+                    print(Fore.RED + Style.BRIGHT + "Invalid answer! "
                           "Please choose between numbers 1, 2, 3 or 4")
 
         print("\nQuiz completed!\nHere is your result: ")
@@ -85,15 +89,15 @@ def conduct_quiz(food_questions, mult_choices, correct_answer):
 
         # Prompt user to restart the quiz
         while True:
-            restart = input("\nDo you want to restart the quiz? (yes/no):\n ").lower()
+            restart = input(Fore.CYAN + "\nDo you want to restart the quiz? (yes/no):" + Style.RESET_ALL + "\n ").lower()
             if restart == "yes":
-                print("\nRestarting the quiz...\n")
+                print(Fore.MAGENTA + "\nRestarting the quiz...\n")
                 break
             elif restart == "no":
-                print("\n Thank you for taking this quiz! Bye!") 
+                print(Back.GREEN + Style.BRIGHT + "\n Thank you for taking this quiz! Bye!") 
                 return     
             else:
-                print("Invalid answer, please type 'yes' or 'no'.")
+                print(Fore.RED + Style.BRIGHT + "Invalid answer, please type 'yes' or 'no'.")
                 
 
 conduct_quiz(food_questions, mult_choices, correct_answer)
