@@ -31,8 +31,8 @@ mult_choices = (
     ("1. Poland", "2. Hungary", "3. Czech Republic", "4. Slovakia"),
     ("1. Empanadas", "2. Sushi", "3. Pho", "4. Tacos"),
     ("1. Pad Thai", "2. Feijoada", "3. Kimchi", "4. Gyros"),
-    ("1. Russia", "2. France", "3. Italy", "4. Spain")  
-)
+    ("1. Russia", "2. France", "3. Italy", "4. Spain")
+    )
 
 correct_answer = ("2", "2", "3", "1", "1", "4", "1", "1", "2", "1")
 
@@ -54,7 +54,8 @@ def conduct_quiz(food_questions, mult_choices, correct_answer):
         random.shuffle(food_questions_order)
 
         for i in food_questions_order:
-            print(Fore.BLUE + Style.BRIGHT + f"\nQuestion: {food_questions[i]}")
+            print(Fore.BLUE + Style.BRIGHT +
+                  f"\nQuestion: {food_questions[i]}")
             print(Fore.YELLOW + "Choices: ")
             for choice in mult_choices[i]:
                 print(Style.BRIGHT + choice)
@@ -76,7 +77,7 @@ def conduct_quiz(food_questions, mult_choices, correct_answer):
             if user_answer == correct_answer:
                 score += 1
         print(f"\nTotal Points: {score}")
-        
+
         # Display message to user based on score
         if score <= 3:
             print("Well... \nThe good part is that you get to explore"
@@ -89,15 +90,20 @@ def conduct_quiz(food_questions, mult_choices, correct_answer):
 
         # Prompt user to restart the quiz
         while True:
-            restart = input(Fore.CYAN + "\nDo you want to restart the quiz? (yes/no):" + Style.RESET_ALL + "\n ").lower()
+            restart = input(Fore.CYAN +
+                            "\nDo you want to restart the quiz? (yes/no):"
+                            + Style.RESET_ALL + "\n ").lower()
             if restart == "yes":
                 print(Fore.MAGENTA + "\nRestarting the quiz...\n")
                 break
             elif restart == "no":
-                print(Back.GREEN + Style.BRIGHT + "\n Thank you for taking this quiz! Bye! " + Back.RESET + Style.RESET_ALL)
-                return     
+                print(Back.GREEN + Style.BRIGHT +
+                      "\n Thank you for taking this quiz! Bye! "
+                      + Back.RESET + Style.RESET_ALL)
+                return
             else:
-                print(Fore.RED + Style.BRIGHT + "Invalid answer, please type 'yes' or 'no'.")
-                
+                print(Fore.RED + Style.BRIGHT +
+                      "Invalid answer, please type 'yes' or 'no'.")
+
 
 conduct_quiz(food_questions, mult_choices, correct_answer)
