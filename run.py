@@ -105,5 +105,5 @@ def conduct_quiz(food_questions, mult_choices, correct_answer):
                 print(Fore.RED + Style.BRIGHT +
                       "Invalid answer, please type 'yes' or 'no'.")
 
-
-conduct_quiz(food_questions, mult_choices, correct_answer)
+if __name__ == '__main__':
+    conduct_quiz(food_questions, mult_choices, correct_answer)
