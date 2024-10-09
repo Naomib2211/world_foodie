@@ -69,8 +69,7 @@ class TestQuiz(unittest.TestCase):
     def test_all_incorrect_answers(self, mock_stdout, mock_input):
         conduct_quiz(food_questions, mult_choices, correct_answer)
         output = mock_stdout.getvalue()
-
-        
+      
         self.assertIn("Total Points: 0", output)
         self.assertIn("Well... \nThe good part is that you get to explore"
                       "\nwhat the world has to offer!", output)        
