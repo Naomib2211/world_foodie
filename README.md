@@ -125,11 +125,29 @@ I've used the following Python packages and/or external imported packages.
 
 ## Testing
 
-- **Python validation**
-    
+### Manual testing
+
+- **Input validation**
+    - Manual testing involved running the quiz and entering specific sets of invalid inputs to verify that the program handled them correctly. The inputs tested included letters, multiple letters, numbers outside the valid range, an empty input (ENTER), only spaces, and special characters. As shown in the image below, the program responded to each of these cases as expected, rejecting invalid entries and prompting the user to input a valid answer.
+
+    ![screenshot](documentation/testing1%202.png)
+
+- **Question randomization** successfully shuffles the order of questions in each quiz session. By restarting the quiz, it was proven the question presented in random order. Please refer to image in feature section in the beginning. 
+
+- 
 
 > [!NOTE]  
 > For further extensive testing, please refer to the [unittest.mock](quiztesting.py) file.
+
+### Python validator
+
+- The Code Institute's own [PythonLinter](https://pep8ci.herokuapp.com/) was used to validate the code created for this quiz. Mistakes that were corrected were the common ones such as: 
+    - W291 trailing whitespace
+    - W293 blank line contains whitespace
+    - E122 continuation line missing indentation or out-dented
+    - E501 line too long (124 > 79 characters)
+These were all amended by following the suggestions. Unfortunately this was not documented. For future improvements documentation of each step will be made.
+
 
 ## Deployment
 
